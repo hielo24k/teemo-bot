@@ -1,6 +1,12 @@
-# 🍄 Teemo - El Yordle Marxista-Leninista de Bandle City
+<div align="center">
+  <img src="teemo_avatar.png" alt="Teemo Avatar" width="200" />
+  <h1>🍄 Teemo - El Yordle Marxista-Leninista de Bandle City ☭</h1>
+  <p><em>Un bot de Discord revolucionario impulsado por <strong>Google Gemini</strong> y <strong>discord.py</strong>.</em></p>
+</div>
 
-Un bot de Discord revolucionario impulsado por **Google Gemini (`gemini-2.5-flash`)** y **discord.py**. Teemo analiza cada mensaje y evento en tu servidor bajo el prisma del materialismo histórico, la plusvalía y la lucha de clases, ilustrando sus argumentos con analogías de League of Legends.
+---
+
+Teemo analiza cada mensaje y evento en tu servidor bajo el prisma del materialismo histórico, la plusvalía y la lucha de clases, ilustrando sus argumentos con analogías de League of Legends.
 
 ---
 
