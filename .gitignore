@@ -1,0 +1,19 @@
+# Entorno y credenciales sensibles
+.env
+.env.local
+
+# Python cache y bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+ENV/
+
+# Logs e IDEs
+*.log
+.vscode/
+.idea/

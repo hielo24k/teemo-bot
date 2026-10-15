@@ -1,0 +1,9 @@
+.env
+.env.local
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.git/
+.gitignore
+README.md
