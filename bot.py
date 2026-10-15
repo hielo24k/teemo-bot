@@ -41,7 +41,7 @@ load_dotenv()
 
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+GEMINI_MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 
 # Validación preventiva de credenciales críticas
 if not DISCORD_TOKEN:
@@ -74,12 +74,18 @@ PERSONAJE = (
     "Máximo 3-4 oraciones por respuesta. Responde siempre en español."
 )
 
-# Respuestas de contingencia en caso de error técnico o saturación de la API de IA
+# Respuestas de contingencia variadas en caso de fallo de red o censura
 FALLBACKS = [
-    "La revolución se retrasó por un error técnico. 🍄",
+    "La revolución se retrasó por un error técnico de los servidores de Riot. 🍄",
     "Ni el materialismo dialéctico puede procesar tamaña tontería.",
     "Hasta tu mensaje refleja la alienación del trabajo asalariado. ☭🍄",
-    "Eso fue tan malo que se me cayó un hongo.",
+    "Eso fue tan malo que se me cayó un hongo venenoso.",
+    "El Comité Central de Bandle City ha decidido ignorar tu comentario contrarrevolucionario.",
+    "¿Acaso ese mensaje fue redactado por un lacayo de la oligarquía de Piltóver?",
+    "Mi dardo no envenena el cuerpo, sino la falsa conciencia de los opresores.",
+    "Los súbditos marchan en fila sin rebelarse, igual que tú al enviar eso. 🍄☭",
+    "La acumulación originaria de capital no se compara con tu falta de visión dialéctica.",
+    "Revolución o barbarie, camarada. Y lo tuyo claramente roza la barbarie.",
 ]
 
 # Nombre del rol para sancionar y reeducar disidentes
@@ -130,7 +136,7 @@ def _call_gemini_sync(prompt: str, system_prompt: str = PERSONAJE) -> str:
     except Exception as exc:
         logger.error("Error en llamada a Gemini (%s): %s", GEMINI_MODEL_NAME, exc)
         # Reintento con modelos alternativos vigentes si el configurado fue deprecado o no está disponible
-        modelos_fallback = ["gemini-3.8-flash", "gemini-flash-latest", "gemini-2.5-flash"]
+        modelos_fallback = ["gemini-3.5-flash-lite", "gemini-3.5-flash", "gemini-flash-lite-latest", "gemini-3.8-flash"]
         for alt_model in modelos_fallback:
             if alt_model == GEMINI_MODEL_NAME:
                 continue
